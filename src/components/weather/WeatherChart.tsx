@@ -26,6 +26,7 @@ function WeatherChart(props: Props) {
   const forecastData = useSelector(ForecastAll);
   let chartData = [];
   useEffect(() => {
+    console.log(dayjs(activeDate).get('date'),forecastData,"date")
     chartData = forecastData.filter(
       (item: any, index: number) => dayjs(item.dt_txt).get('date') == dayjs(activeDate).get('date'),
     );
@@ -38,9 +39,7 @@ function WeatherChart(props: Props) {
     }));
 
     setData(arr);
-  }, [props.activeItem, props.weatherDataType]);
-
-  const {} = props;
+  }, [props.activeItem, props.activeDate,props.weatherDataType]);
 
   return (
     <ResponsiveContainer width="100%" height="100%">

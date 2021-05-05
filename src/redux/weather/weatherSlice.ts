@@ -62,6 +62,7 @@ export function loadWeather(query: string) {
         dispatch(actions.setForecast(forecast.forecast));
         dispatch(actions.setForecastAll(forecast.forecastAll));
         dispatch(actions.setForecastLoading(false));
+        dispatch(actions.setViewType('weatherView'));
       })
       .catch((err) => {
         dispatch(actions.setError(err.message));
@@ -72,7 +73,7 @@ export function loadWeather(query: string) {
       .then((weather) => {
         dispatch(actions.setWeather(weather));
         dispatch(actions.setWeatherLoading(false));
-        dispatch(actions.setViewType('weatherView'));
+        
       })
       .catch((err) => {
         dispatch(actions.setError(err.message));
