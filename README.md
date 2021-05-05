@@ -1,10 +1,10 @@
 
 
 Weather exercise app.
- 
+
 # Installation
 
-## npm i
+### `npm install`
 
 In the project directory, you can run:
 
